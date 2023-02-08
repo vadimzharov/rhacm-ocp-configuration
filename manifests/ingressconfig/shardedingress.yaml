@@ -4,7 +4,7 @@ metadata:
   name: sharded
   namespace: openshift-ingress-operator
 spec:
-  domain: <apps-sharded.basedomain.example.net>
+  domain: apps-sharded.basedomain.example.net
   nodePlacement:
     nodeSelector:
       matchLabels:
