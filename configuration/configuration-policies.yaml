@@ -18,3 +18,4 @@ policies:                             # List of policies to create in RHACM
   - name: notifications-configuration # New policy
     manifests:                        #
       - path: manifests/notifications # Path to manifests
+    consolidateManifests: false       # True by default.      
