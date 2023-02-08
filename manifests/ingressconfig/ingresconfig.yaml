@@ -7,4 +7,4 @@ spec:
   nodePlacement:
     nodeSelector:
       matchLabels:
-        kubernetes.io/node-role: infra
+        node-role.kubernetes.io/worker: ""
