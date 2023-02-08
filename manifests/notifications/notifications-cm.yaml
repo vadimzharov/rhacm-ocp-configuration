@@ -1,0 +1,13 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: console-notifications
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: console-notification
+  namespace: console-notifications
+data:
+  dev: "This is a development cluster, you can do whatever you want."
+  prod: "This is a production cluster. Touch it and you are doomed."
