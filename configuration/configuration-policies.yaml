@@ -1,24 +1,24 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
-  name: configuration-policies        # Name of policygenerator resource, never appear in any cluster including RHACM
-policyDefaults:                       # Default settings for all policies listed in this YAML
-  namespace: configuration-policies   # Default namespace to create policies on the ACM HUB
-  remediationAction: enforce          # Default action for policies - enforce - apply configuration
-  placement:                          # Policies will be applied to
-    clusterSelectors:                 # all managed clusters which have
-      base-config: "true"             # label base-config=true assigned in RHACM
-policies:                             # List of policies to create in RHACM
-  - name: ingress-configuration       # Name of the first policy to create in RHACM
-    manifests:                        # For the policy - path with all manifests use to generate (can be directory or path to a single YAML file)
-      - path: manifests/ingressconfig # (can be list of directories or path to a single YAML file) 
-  - name: operators-configuration     # New policy name
-    manifests:                        # 
-      - path: manifests/operators     # Path to manifests.
-  - name: notifications-configuration # New policy
-    manifests:                        #
-      - path: manifests/notifications # Path to manifests
-    consolidateManifests: false       # True by default.      
+  name: configuration-policies                        # Name of policygenerator resource, never appear in any cluster including RHACM
+policyDefaults:                                       # Default settings for all policies listed in this YAML
+  namespace: configuration-policies                   # Default namespace to create policies on the ACM HUB
+  remediationAction: enforce                          # Default action for policies - enforce - apply configuration
+  placement:                                          # Policies will be applied to
+    clusterSelectors:                                 # all managed clusters which have
+      base-config: "true"                             # label base-config=true assigned in RHACM
+policies:                                             # List of policies to create in RHACM
+  - name: ingress-configuration                       # Name of the first policy to create in RHACM
+    manifests:                                        # For the policy - path with all manifests use to generate (can be directory or path to a single YAML file)
+      - path: manifests/ingressconfig                 # (can be list of directories or path to a single YAML file) 
+  - name: operators-configuration                     # New policy name
+    manifests:                                        # 
+      - path: manifests/operators                     # Path to manifests.
+  - name: notifications-configuration                 # New policy
+    manifests:                                        #
+      - path: manifests/notifications                 # Path to manifests
+    consolidateManifests: false                       # True by default.      
   - name: scheduler-cloud-configuration               # Name of the policy to configure scheduler on cloud clusters
     manifests:                                        
       - path: manifests/scheduler/scheduler.yaml      # Path to one manifest used as the base for both cloud and onprem
