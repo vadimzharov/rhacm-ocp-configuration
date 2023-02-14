@@ -32,4 +32,4 @@ policies:                                             # List of policies to crea
       - path: manifests/scheduler/cloud/scheduler     # Path to manifests specific to onprem clusters
     placement:                                        # Do not use default label (base-config=true)
       clusterSelectors:                               # Use onprem-config=true instead
-        onprem-config: "true”
+        onprem-config: "true"
