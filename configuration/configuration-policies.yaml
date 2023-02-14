@@ -19,17 +19,17 @@ policies:                                             # List of policies to crea
     manifests:                                        #
       - path: manifests/notifications                 # Path to manifests
     consolidateManifests: false                       # True by default.      
-  - name: scheduler-cloud-configuration               # Name of the policy to configure scheduler on cloud clusters
-    manifests:                                        
-      - path: manifests/scheduler/scheduler.yaml      # Path to one manifest used as the base for both cloud and onprem
-      - path: manifests/scheduler/cloud/scheduler     # Path to manifests specific to cloud clusters
-    placement:                                        # Do not use default label (base-config=true)
-      clusterSelectors:                               # Use cloud-config=true instead
-        cloud-config: "true"
-  - name: scheduler-onprem-configuration              # Name of the policy to configure scheduler on onprem clusters
-    manifests:                                                   
-      - path: manifests/scheduler/scheduler.yaml      # Path to one manifest used as the base for both cloud and onprem
-      - path: manifests/scheduler/cloud/scheduler     # Path to manifests specific to onprem clusters
-    placement:                                        # Do not use default label (base-config=true)
-      clusterSelectors:                               # Use onprem-config=true instead
-        onprem-config: "true"
+  # - name: scheduler-cloud-configuration               # Name of the policy to configure scheduler on cloud clusters
+  #   manifests:                                        
+  #     - path: manifests/scheduler/scheduler.yaml      # Path to one manifest used as the base for both cloud and onprem
+  #     - path: manifests/scheduler/cloud/scheduler     # Path to manifests specific to cloud clusters
+  #   placement:                                        # Do not use default label (base-config=true)
+  #     clusterSelectors:                               # Use cloud-config=true instead
+  #       cloud-config: "true"
+  # - name: scheduler-onprem-configuration              # Name of the policy to configure scheduler on onprem clusters
+  #   manifests:                                                   
+  #     - path: manifests/scheduler/scheduler.yaml      # Path to one manifest used as the base for both cloud and onprem
+  #     - path: manifests/scheduler/cloud/scheduler     # Path to manifests specific to onprem clusters
+  #   placement:                                        # Do not use default label (base-config=true)
+  #     clusterSelectors:                               # Use onprem-config=true instead
+  #       onprem-config: "true"
