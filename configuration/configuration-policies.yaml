@@ -12,6 +12,8 @@ policies:                                             # List of policies to crea
   - name: ingress-configuration                       # Name of the first policy to create in RHACM
     manifests:                                        # For the policy - path with all manifests use to generate (can be directory or path to a single YAML file)
       - path: manifests/ingressconfig                 # (can be list of directories or path to a single YAML file) 
+    policyAnnotations:
+      policy.open-cluster-management.io/trigger-update: '2'
   - name: operators-configuration                     # New policy name
     manifests:                                        # 
       - path: manifests/operators                     # Path to manifests.
